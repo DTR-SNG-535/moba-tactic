@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOBA TACTIC — Guía Táctica y Coach para Mobile Legends (MLBB)</title>
+    <meta name="description" content="MOBA TACTIC es tu herramienta táctica especializada en Mobile Legends: Bang Bang. Builds reales, combos, counters, simulador de daño, mapa interactivo y pizarra Coach 5v5.">
+    <link rel="icon" type="image/png" href="assets/img/app-icon.png">
+    <link rel="apple-touch-icon" href="assets/img/app-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Particles background -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">
+                    <img src="assets/img/app-icon.png" alt="MOBA TACTIC" class="logo-img">
+                </div>
+                <span class="logo-text">MOBA<span class="logo-accent">TACTIC</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Funciones</a></li>
+                <li><a href="#games">MLBB</a></li>
+                <li><a href="#stats">Estadísticas</a></li>
+                <li><a href="#testimonials">Comunidad</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#download" class="btn btn-primary btn-nav">
+                    <i class="fas fa-download"></i> Descargar
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#features">Funciones</a></li>
+                <li><a href="#games">MLBB</a></li>
+                <li><a href="#stats">Estadísticas</a></li>
+                <li><a href="#testimonials">Comunidad</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#download" class="btn btn-primary">Descargar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+            <div class="hero-radial"></div>
+            <div class="hero-lines">
+                <div class="h-line"></div><div class="h-line"></div><div class="h-line"></div>
+                <div class="h-line"></div><div class="h-line"></div><div class="h-line"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <span class="badge-dot"></span>
+                <span>Especializada en Mobile Legends: Bang Bang</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up">
+                <span class="title-line">Domina tus Partidas en</span>
+                <span class="title-line title-gradient">MLBB</span>
+                <span class="title-line">Como un Pro</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Builds reales con orden correcto de ítems, combos sugeridos, counters por carril, 
+                simulador de daño por nivel, mapa interactivo y pizarra táctica Coach. Todo lo que necesitas 
+                para subir a Mítico en <strong>Mobile Legends: Bang Bang</strong>.
+            </p>
+            <div class="hero-downloads" data-aos="fade-up" data-aos-delay="400">
+                <a href="#download" class="btn btn-download btn-android" id="btnAndroid">
+                    <div class="btn-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="btn-text">
+                        <span class="btn-small">Descargar para</span>
+                        <span class="btn-big">Android</span>
+                    </div>
+                    <div class="btn-badge">APK</div>
+                </a>
+            </div>
+            <div class="hero-meta" data-aos="fade-up" data-aos-delay="500">
+                <div class="meta-item">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>100% Seguro · Sin inyección</span>
+                </div>
+                <div class="meta-separator">•</div>
+                <div class="meta-item">
+                    <i class="fas fa-users"></i>
+                    <span>133 Héroes MLBB</span>
+                </div>
+                <div class="meta-separator">•</div>
+                <div class="meta-item">
+                    <i class="fas fa-wifi"></i>
+                    <span>Funciona Offline</span>
+                </div>
+            </div>
+        </div>
+        <!-- Floating cards around hero -->
+        <div class="hero-floating-cards">
+            <div class="float-card fc-1">
+                <div class="fc-icon"><i class="fas fa-chess-knight"></i></div>
+                <div class="fc-text">Counters 5v5</div>
+            </div>
+            <div class="float-card fc-2">
+                <div class="fc-icon"><i class="fas fa-bolt"></i></div>
+                <div class="fc-text">Builds y Combos</div>
+            </div>
+            <div class="float-card fc-3">
+                <div class="fc-icon"><i class="fas fa-trophy"></i></div>
+                <div class="fc-text">Meta Mythic Glory</div>
+            </div>
+            <div class="float-card fc-4">
+                <div class="fc-icon"><i class="fas fa-chalkboard-user"></i></div>
+                <div class="fc-text">Pizarra Coach</div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">FUNCIONES</span>
+                <h2 class="section-title">Todo Lo Que Necesitas Para <span class="text-gradient">Ganar en MLBB</span></h2>
+                <p class="section-subtitle">Herramientas tácticas diseñadas específicamente para Mobile Legends: Bang Bang</p>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Builds y Combos Reales</h3>
+                    <p>Equipamientos más usados ítem por ítem (con ítems de cambio), emblemas, hechizos y combos sugeridos para los 133 héroes.</p>
+                    <div class="feature-tag">Meta MLBB</div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon icon-purple">
+                        <i class="fas fa-chess-board"></i>
+                    </div>
+                    <h3>Counters y Simulador de Draft</h3>
+                    <p>Consulta matchups fuertes, débiles y sinergias por carril para responder mejor cada pick y ban en partidas clasificatorias.</p>
+                    <div class="feature-tag tag-purple">Draft 5v5</div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon icon-green">
+                        <i class="fas fa-map-location-dot"></i>
+                    </div>
+                    <h3>Mapa Táctico Interactivo</h3>
+                    <p>Zonas de la Tierra del Amanecer, timings de Tortuga y Lord, rotaciones por fase de partida y retos de rutas.</p>
+                    <div class="feature-tag tag-green">Mapa MLBB</div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon icon-orange">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                    <h3>Pizarra Coach (Normal y Pro)</h3>
+                    <p>Dibuja jugadas, despliega 5v5 con héroes o roles, aplica formaciones de MLBB, usa rastro táctico y exporta tus pizarras a PNG.</p>
+                    <div class="feature-tag tag-orange">Coach 5v5</div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon icon-red">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Escalado y Simulador de Daño</h3>
+                    <p>Revisa daño base, crecimiento por nivel de habilidad y simula cuánto impacta cada ítem, pasiva o penetración en tu build.</p>
+                    <div class="feature-tag tag-red">Estadísticas</div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon icon-yellow">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Guías por Rol y Drills</h3>
+                    <p>Domina EXP, Jungla, Mid, Oro y Roam con guías de macrojuego, tier list por parche, ajustes recientes y práctica offline.</p>
+                    <div class="feature-tag tag-yellow">5 Roles</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SUPPORTED GAMES ========== -->
+    <section class="games" id="games">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">JUEGO SOPORTADO</span>
+                <h2 class="section-title">Enfocado 100% en <span class="text-gradient">Mobile Legends</span></h2>
+                <p class="section-subtitle">Por el momento la app está dedicada exclusivamente a MLBB. Otros MOBAs aún están por confirmar.</p>
+            </div>
+            <div class="games-showcase">
+                <div class="game-card" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="game-card-bg" style="--game-color: #e6a817;"></div>
+                    <div class="game-card-content">
+                        <div class="game-platform"><i class="fas fa-check-circle"></i> Único juego activo</div>
+                        <h3>Mobile Legends: Bang Bang</h3>
+                        <p>Android (APK) · Builds, counters, mapa y pizarra Coach</p>
+                        <div class="game-heroes-count">
+                            <span class="heroes-num">133</span>
+                            <span>Héroes · 105 Ítems · 5 Roles</span>
+                        </div>
+                    </div>
+                    <div class="game-card-shine"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATS SECTION ========== -->
+    <section class="stats" id="stats">
+        <div class="stats-bg-pattern"></div>
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-number" data-target="133">0</div>
+                    <div class="stat-label">Héroes MLBB con Builds y Combos</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--fill: 96%;"></div></div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number" data-target="105">0</div>
+                    <div class="stat-label">Ítems y Equipamientos Analizados</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--fill: 88%;"></div></div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Roles Cubiertos (EXP, Jungla, Mid, Oro, Roam)</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--fill: 100%;"></div></div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Gratis y Utilizable Sin Conexión</div>
+                    <div class="stat-bar"><div class="stat-bar-fill" style="--fill: 100%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-it-works">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">CÓMO FUNCIONA</span>
+                <h2 class="section-title">De Épico a Mítico en <span class="text-gradient">3 Pasos</span></h2>
+            </div>
+            <div class="steps-container">
+                <div class="step-line"></div>
+                <div class="step" data-aos="fade-right" data-aos-delay="0">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Descarga e Instala</h3>
+                        <p>Disponible actualmente para Android (APK). Sin registros obligatorios y lista para consultar incluso offline.</p>
+                    </div>
+                    <div class="step-icon"><i class="fas fa-download"></i></div>
+                </div>
+                <div class="step" data-aos="fade-left" data-aos-delay="150">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Prepara tu Héroe y Build</h3>
+                        <p>Elige tu rol en MLBB, revisa el orden exacto de compra de cada ítem, talentos de emblema, combos y counters directos.</p>
+                    </div>
+                    <div class="step-icon"><i class="fas fa-layer-group"></i></div>
+                </div>
+                <div class="step" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Planifica en el Mapa y Coach</h3>
+                        <p>Entrena rutas y objetivos en el mapa interactivo o traza jugadas 5v5 en la Pizarra Coach (Normal y Pro).</p>
+                    </div>
+                    <div class="step-icon"><i class="fas fa-crown"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">COMUNIDAD MLBB</span>
+                <h2 class="section-title">Hecha Para <span class="text-gradient">Jugadores y Coaches</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Por fin una app de MLBB con las builds en el orden real en que se compran, ítems de cambio incluidos y los combos claros por héroe."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div>
+                            <div class="author-name">DarkKnight_99</div>
+                            <div class="author-rank"><i class="fas fa-medal"></i> Mítico Honor · Jungla — MLBB</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"El Modo Pro de la Pizarra Coach es clave con nuestra escuadra: colocamos los 5v5, elegimos formaciones MLBB, marcamos rotaciones y guardamos en PNG."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SV</div>
+                        <div>
+                            <div class="author-name">ShadowViper</div>
+                            <div class="author-rank"><i class="fas fa-medal"></i> Gloria Mítica · Coach 5v5 — MLBB</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Poder ver el escalado real por nivel de cada habilidad, los avisos de buff/nerf y consultar counters offline antes de entrar a ranked es comodísimo."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LF</div>
+                        <div>
+                            <div class="author-name">LunaFrost</div>
+                            <div class="author-rank"><i class="fas fa-medal"></i> Leyenda I · EXP / Roam — MLBB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DOWNLOAD CTA SECTION ========== -->
+    <section class="download-cta" id="download">
+        <div class="download-cta-bg">
+            <div class="cta-orb cta-orb-1"></div>
+            <div class="cta-orb cta-orb-2"></div>
+        </div>
+        <div class="section-container">
+            <div class="download-content" data-aos="fade-up">
+                <h2 class="section-title">¿Listo Para <span class="text-gradient">Subir en MLBB</span>?</h2>
+                <p class="section-subtitle">Descarga MOBA TACTIC gratis y lleva contigo todas las builds, counters y la Pizarra Coach.</p>
+                
+                <div class="download-cards">
+                    <!-- Android Card -->
+                    <div class="download-card dc-android" data-aos="fade-up" data-aos-delay="0">
+                        <div class="dc-header">
+                            <i class="fab fa-android"></i>
+                            <h3>Android</h3>
+                        </div>
+                        <div class="dc-info">
+                            <div class="dc-row"><span>Versión</span><span>0.1.40</span></div>
+                            <div class="dc-row"><span>Tamaño aprox.</span><span>~138 MB</span></div>
+                            <div class="dc-row"><span>Requisitos</span><span>Android 7.0+</span></div>
+                            <div class="dc-row"><span>Juego soportado</span><span>Mobile Legends (MLBB)</span></div>
+                        </div>
+                        <div class="dc-buttons">
+                            <a href="https://github.com/DTR-SNG-535/moba-tactic/releases/download/v0.1.40/MOBA-TACTIC-v0.1.40.apk" download="MOBA-TACTIC-v0.1.40.apk" class="btn btn-download-card btn-primary-glow">
+                                <i class="fas fa-download"></i> Descargar APK
+                            </a>
+                            <a href="#download" class="btn btn-download-card btn-outline">
+                                <i class="fab fa-google-play"></i> Play Store (Pronto)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq" id="faq">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Preguntas <span class="text-gradient">Frecuentes</span></h2>
+            </div>
+            <div class="faq-list" data-aos="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Por qué por ahora solo tiene datos de Mobile Legends: Bang Bang?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Por el momento MOBA TACTIC está centrado al 100% en Mobile Legends: Bang Bang para ofrecer la mejor precisión en sus 133 héroes, 105 ítems, emblemas, counters, simulador de daño y Pizarra Coach. Más adelante evaluaremos añadir otros MOBAs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿MOBA TACTIC es gratis?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, MOBA TACTIC es gratuito y te da acceso completo a la biblioteca de héroes, builds con ítems de cambio, mapa interactivo, simulador de daño y ambos modos de la Pizarra Coach (Normal y Pro).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Es seguro usar MOBA TACTIC? ¿Me pueden banear?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Es 100% seguro. MOBA TACTIC NO modifica archivos de Mobile Legends, NO inyecta código ni lee datos en vivo del cliente del juego. Funciona de forma totalmente independiente como guía táctica y pizarra estratégica.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Funciona sin conexión a internet?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí. Todos los héroes, builds, habilidades, escalados por nivel, ítems, guías por rol y la Pizarra Coach funcionan directamente en tu dispositivo aunque no tengas conexión.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué diferencia hay entre Modo Normal y Modo Pro en Coach?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El Modo Normal ofrece una pizarra vertical rápida con pincel, borrador y despliegue 5v5. El Modo Pro expande el tablero en horizontal y desbloquea formaciones tácticas de MLBB, formas geométricas, rastro de héroes, contador 00:00 y exportación a PNG.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="section-container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="nav-logo">
+                            <div class="logo-icon">
+                                <img src="assets/img/app-icon.png" alt="MOBA TACTIC" class="logo-img">
+                            </div>
+                            <span class="logo-text">MOBA<span class="logo-accent">TACTIC</span></span>
+                        </a>
+                        <p>Guía táctica y pizarra estratégica enfocada por ahora en jugadores de Mobile Legends: Bang Bang.</p>
+                        <div class="footer-socials">
+                            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>App</h4>
+                        <ul>
+                            <li><a href="#features">Funciones</a></li>
+                            <li><a href="#games">Soporte MLBB</a></li>
+                            <li><a href="#stats">Contenido</a></li>
+                            <li><a href="#download">Descargar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Apartados</h4>
+                        <ul>
+                            <li><a href="#features">Builds y Combos</a></li>
+                            <li><a href="#features">Counters y Draft</a></li>
+                            <li><a href="#features">Mapa MLBB</a></li>
+                            <li><a href="#features">Pizarra Coach</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Información</h4>
+                        <ul>
+                            <li><a href="#faq">Seguridad</a></li>
+                            <li><a href="#faq">Preguntas Frecuentes</a></li>
+                            <li><a href="#testimonials">Comunidad</a></li>
+                            <li><a href="#download">Descargar APK</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="section-container">
+                <p>&copy; 2026 MOBA TACTIC. Todos los derechos reservados. Proyecto independiente; no estamos afiliados a MOONTON Games ni a terceros.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
