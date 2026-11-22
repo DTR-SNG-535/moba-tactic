@@ -182,10 +182,22 @@ body:hover .cursor-glow { opacity: 1; }
 }
 
 .logo-accent {
-    background: var(--gradient-main);
+    background: linear-gradient(90deg, #00f0ff 0%, #3b82f6 26%, #b400ff 52%, #3b82f6 76%, #00f0ff 100%);
+    background-size: 250% 100%;
+    background-position: 0% 50%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: tacticShimmer 4s linear infinite;
+}
+
+@keyframes tacticShimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 250% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-accent { animation: none; }
 }
 
 .nav-links {
